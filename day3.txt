@@ -1,0 +1,127 @@
+slide 137 1st:
+ read num1
+read num2
+if test $num1 -gt $num2
+then
+  echo "Num1 is bigger"
+else
+  echo "Num2 is bigger"
+fi
+
+slide 137 2nd:
+addnums(){
+expr $1 + $2 +$c
+}
+read a
+read b
+addnums $a $b
+
+3. for i in 1 2 3 4 5
+do
+  echo $i
+done
+
+slide 155 2nd:
+if ls Sample1.sh >/dev/null 2>&1
+then
+  echo "file found"
+else
+  echo "file dosen't exists"
+fi
+
+5.echo $0
+echo $1
+echo $2
+echo $*
+
+slide 170 1st:
+read a
+while [ $a != "EOF" ]
+do
+case $a in
+ [0-9]*) echo "Number";;
+ [a-z]*) echo "Alphabet";;
+ [A-Z]*) echo "Alphabet";;
+ *) echo "special character";;
+esac
+read a
+done
+
+slide163 3rd:
+var=`cat ./textfile.txt`
+for i in $var
+do
+  var2=`echo $i|wc -c`
+  var2=$((var2-1))
+  echo $i $var2
+done
+
+slide 163 2nd:
+read a
+c=0
+until [ $a -eq 0 ]
+do
+ c=`expr $c + $a `
+ read a
+done
+echo $c
+
+5.
+i=1
+read a
+var1=`echo $a|wc -c`
+var2=$a
+while [ $i -le 5 ]
+do
+ read a
+ c=`echo $a|wc -c`
+ if test $var1 -lt $c
+ then
+  var1=$c
+  var2=$a
+  fi
+ i=$((i+1))
+done
+echo $var1 $var2
+
+10. read file
+if test -s $file
+then
+  echo "file exists and is not empty"
+elif test -f $file
+then
+  echo "file exists and it is empty"
+else
+  echo "file dosen't exists"
+fi
+
+11.read a
+echo $a
+until [ $a = "delhi" ]
+do
+  read a
+done
+
+slide 137: 
+read a b
+expr $a + $b
+
+  slide 170 2nd:
+  1 nm="abc"
+  2 while  [ $nm != “INDIA”  ]
+  3
+  4  do
+  5
+  6      echo “Enter your country name”
+  7
+  8      read name
+  9      nm=${name:-111}
+ 10
+ 11      if [ -z $name ]
+ 12      then
+ 13
+ 14        continue
+ 15
+ 16      fi
+ 17
+ 18 done
